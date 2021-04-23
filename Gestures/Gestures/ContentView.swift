@@ -28,7 +28,7 @@ struct ContentView: View {
             )
             .simultaneousGesture(LongPressGesture()
                                     .onEnded { _ in
-                                        self.scale = self.didLongPress == false ? 10 : 1
+                                        self.scale = self.didLongPress == false ? 2 : 1
                                         self.didLongPress.toggle()
                                     }
             )

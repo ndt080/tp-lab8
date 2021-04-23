@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var animateScale = false
     @State private var didLongPress: Bool = false
     @State private var drag: CGSize = .zero
     @State private var scale: CGFloat = 1
@@ -36,47 +37,53 @@ struct ContentView: View {
                             .font(.title)
                             .fontWeight(.semibold)
                         GeometryReader { geometry in
-                            Pentagon().path(Xcenter: screenWidth/2-14, Ycenter: 100)
+                            PolygonShape(sides: 5)
                                 .fill(LinearGradient(gradient: gradient, startPoint: .bottomTrailing, endPoint: .topLeading))
                                 .rotationEffect(.degrees(35))
-                            Pentagon().path(Xcenter: screenWidth/2, Ycenter: 95)
+                            PolygonShape(sides: 5)
                                 .fill(LinearGradient(gradient: gradient, startPoint: .bottomTrailing, endPoint: .topLeading))
-
                         }
+                        
                         .padding(.vertical, 10)
                         .shadow(radius: 10)
                         .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
                         .rotationEffect(rotation)
                         .scaleEffect(scale)
+                        .scaleEffect(animateScale ? 0.5 : 1.0)
+                        .opacity(animateScale ? 0.2 : 1.0)
+                        .animation(.easeInOut(duration: 1.0))
                         .offset(drag)
-                        .simultaneousGesture(DragGesture()
-                                                .onChanged { value in
-                                                 self.drag = value.translation
-                                                }
-                                                .onEnded({ _ in
-                                                  self.drag = .zero
-                                                 })
+                        .onTapGesture {
+                            self.animateScale.toggle()
+                        }
+                        .simultaneousGesture(
+                            DragGesture()
+                                .onChanged { value in
+                                 self.drag = value.translation
+                                }
+                                .onEnded({ _ in
+                                  self.drag = .zero
+                                 })
                         )
-                        .simultaneousGesture(TapGesture()
-                                                .onEnded { _ in
-                                                    self.changeColor = self.changeColor == Color.purple ? Color.blue : Color.purple
-                                                }
+         
+                        .simultaneousGesture(
+                            LongPressGesture()
+                                .onEnded { _ in
+                                    self.scale = self.didLongPress == false ? 2 : 1
+                                    self.didLongPress.toggle()
+                                }
                         )
-                        .simultaneousGesture(LongPressGesture()
-                                                .onEnded { _ in
-                                                    self.scale = self.didLongPress == false ? 10 : 1
-                                                    self.didLongPress.toggle()
-                                                }
+                        .simultaneousGesture(
+                            RotationGesture()
+                                .onChanged { value in
+                                    self.rotation = value
+                                }
                         )
-                        .simultaneousGesture(RotationGesture()
-                                                .onChanged { value in
-                                                    self.rotation = value
-                                                }
-                        )
-                        .simultaneousGesture(MagnificationGesture()
-                                                .onChanged { value in
-                                                    self.scale = value
-                                                }
+                        .simultaneousGesture(
+                            MagnificationGesture()
+                                .onChanged { value in
+                                    self.scale = value
+                                }
                         )
                     }
                     .padding(.vertical, 30)
@@ -85,6 +92,8 @@ struct ContentView: View {
             }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
