@@ -11,7 +11,6 @@
 		C989E25D2631DFB300220803 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989E25C2631DFB300220803 /* ContentView.swift */; };
 		C989E25F2631DFB400220803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C989E25E2631DFB400220803 /* Assets.xcassets */; };
 		C989E2622631DFB400220803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C989E2612631DFB400220803 /* Preview Assets.xcassets */; };
-		C989E26B2631DFD900220803 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989E26A2631DFD900220803 /* CanvasView.swift */; };
 		C989E285263217B200220803 /* DrawingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989E27F263217B200220803 /* DrawingPad.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +21,6 @@
 		C989E25E2631DFB400220803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C989E2612631DFB400220803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C989E2632631DFB400220803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C989E26A2631DFD900220803 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		C989E27F263217B200220803 /* DrawingPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawingPad.swift; path = "../../../../Downloads/DrawingPadSwiftUI-master/DrawingPadSwiftUI/DrawingPad.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +57,6 @@
 				C989E27F263217B200220803 /* DrawingPad.swift */,
 				C989E25A2631DFB300220803 /* PaintApp.swift */,
 				C989E25C2631DFB300220803 /* ContentView.swift */,
-				C989E26A2631DFD900220803 /* CanvasView.swift */,
 				C989E25E2631DFB400220803 /* Assets.xcassets */,
 				C989E2632631DFB400220803 /* Info.plist */,
 				C989E2602631DFB400220803 /* Preview Content */,
@@ -146,7 +143,6 @@
 			files = (
 				C989E25D2631DFB300220803 /* ContentView.swift in Sources */,
 				C989E25B2631DFB300220803 /* PaintApp.swift in Sources */,
-				C989E26B2631DFD900220803 /* CanvasView.swift in Sources */,
 				C989E285263217B200220803 /* DrawingPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
