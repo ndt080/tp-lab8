@@ -33,7 +33,7 @@ struct ContentView: View {
                         .padding(.bottom, 8)
                 }.padding(.horizontal, 20)
                 
-                Slider(value: $lineWidth, in: 1.0...15.0, step: 1.0)
+                Slider(value: $lineWidth, in: 1.0...30.0, step: 1.0)
                     .scaleEffect(CGSize(width: 0.9, height: 0.9))
                 
                 ColorPicker(
