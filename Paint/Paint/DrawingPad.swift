@@ -1,55 +1,18 @@
 import SwiftUI
-import CoreGraphics
+import PencilKit
 
-
-struct DrawingPad: View {
-    @Binding var currentDrawing: Drawing
-    @Binding var drawings: [Drawing]
-    @Binding var color: Color
+struct DrawingPad: UIViewRepresentable {
     @Binding var lineWidth: CGFloat
+    @Binding var selectedColor : Color
+    @Binding var canvasView: PKCanvasView
     
-    var body: some View {
-        GeometryReader { geometry in
-            Path { path in
-                for drawing in self.drawings {
-                    self.add(drawing: drawing, toPath: &path)
-                }
-                self.add(drawing: self.currentDrawing, toPath: &path)
-            }
-            .stroke(self.color, style: StrokeStyle(lineWidth: self.lineWidth, lineCap: .round, lineJoin: .round))
-            .background(Color.white)
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged({ (value) in
-                        let currentPoint = value.location
-                        if currentPoint.y >= 0
-                            && currentPoint.y < geometry.size.height {
-                            self.currentDrawing.points.append(currentPoint)
-                        }
-                    })
-                    .onEnded({ (value) in
-                        self.drawings.append(self.currentDrawing)
-                        self.currentDrawing = Drawing()
-                    })
-            )
-        }
-        .frame(maxHeight: .infinity)
+    func makeUIView(context: Context) -> PKCanvasView {
+        canvasView.drawingPolicy = .anyInput
+        canvasView.tool = PKInkingTool(.pen, color: UIColor(selectedColor), width: lineWidth)
+        return canvasView
     }
     
-    private func add(drawing: Drawing, toPath path: inout Path) {
-        let points = drawing.points
-        if points.count > 1 {
-            for i in 0..<points.count-1 {
-                let current = points[i]
-                let next = points[i+1]
-                path.move(to: current)
-                path.addLine(to: next)
-            }
-        }
+    func updateUIView(_ canvasView: PKCanvasView, context: Context) {
+        canvasView.tool = PKInkingTool(.pen, color: UIColor(selectedColor), width: lineWidth)
     }
-    
-}
-
-struct Drawing {
-    var points: [CGPoint] = [CGPoint]()
 }
