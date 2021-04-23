@@ -12,6 +12,8 @@
 		C95E1B682632E0F400C81439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95E1B672632E0F400C81439 /* Assets.xcassets */; };
 		C95E1B6B2632E0F400C81439 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95E1B6A2632E0F400C81439 /* Preview Assets.xcassets */; };
 		C992A0FC2633685000EF643C /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992A0FB2633685000EF643C /* PolygonShape.swift */; };
+		C992A103263369DE00EF643C /* DecagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992A102263369DE00EF643C /* DecagonView.swift */; };
+		C992A10626336B2D00EF643C /* TrapezoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C992A10526336B2C00EF643C /* TrapezoidView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C95E1B6A2632E0F400C81439 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C95E1B6C2632E0F400C81439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C992A0FB2633685000EF643C /* PolygonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShape.swift; sourceTree = "<group>"; };
+		C992A102263369DE00EF643C /* DecagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecagonView.swift; sourceTree = "<group>"; };
+		C992A10526336B2C00EF643C /* TrapezoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				C95E1B632632E0F300C81439 /* ShapesApp.swift */,
 				C95E1B652632E0F300C81439 /* ContentView.swift */,
+				C992A10526336B2C00EF643C /* TrapezoidView.swift */,
+				C992A102263369DE00EF643C /* DecagonView.swift */,
 				C992A0FB2633685000EF643C /* PolygonShape.swift */,
 				C95E1B672632E0F400C81439 /* Assets.xcassets */,
 				C95E1B6C2632E0F400C81439 /* Info.plist */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C992A103263369DE00EF643C /* DecagonView.swift in Sources */,
+				C992A10626336B2D00EF643C /* TrapezoidView.swift in Sources */,
 				C95E1B662632E0F300C81439 /* ContentView.swift in Sources */,
 				C95E1B642632E0F300C81439 /* ShapesApp.swift in Sources */,
 				C992A0FC2633685000EF643C /* PolygonShape.swift in Sources */,
