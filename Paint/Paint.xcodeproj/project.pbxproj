@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9761EF92632B21A00C3078A /* DrawingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761EF82632B21A00C3078A /* DrawingPad.swift */; };
 		C989E25B2631DFB300220803 /* PaintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989E25A2631DFB300220803 /* PaintApp.swift */; };
 		C989E25D2631DFB300220803 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989E25C2631DFB300220803 /* ContentView.swift */; };
 		C989E25F2631DFB400220803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C989E25E2631DFB400220803 /* Assets.xcassets */; };
 		C989E2622631DFB400220803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C989E2612631DFB400220803 /* Preview Assets.xcassets */; };
-		C989E285263217B200220803 /* DrawingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989E27F263217B200220803 /* DrawingPad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9761EF82632B21A00C3078A /* DrawingPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingPad.swift; sourceTree = "<group>"; };
 		C989E2572631DFB300220803 /* Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C989E25A2631DFB300220803 /* PaintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintApp.swift; sourceTree = "<group>"; };
 		C989E25C2631DFB300220803 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C989E25E2631DFB400220803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C989E2612631DFB400220803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C989E2632631DFB400220803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C989E27F263217B200220803 /* DrawingPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawingPad.swift; path = "../../../../Downloads/DrawingPadSwiftUI-master/DrawingPadSwiftUI/DrawingPad.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 		C989E2592631DFB300220803 /* Paint */ = {
 			isa = PBXGroup;
 			children = (
-				C989E27F263217B200220803 /* DrawingPad.swift */,
 				C989E25A2631DFB300220803 /* PaintApp.swift */,
+				C9761EF82632B21A00C3078A /* DrawingPad.swift */,
 				C989E25C2631DFB300220803 /* ContentView.swift */,
 				C989E25E2631DFB400220803 /* Assets.xcassets */,
 				C989E2632631DFB400220803 /* Info.plist */,
@@ -141,9 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9761EF92632B21A00C3078A /* DrawingPad.swift in Sources */,
 				C989E25D2631DFB300220803 /* ContentView.swift in Sources */,
 				C989E25B2631DFB300220803 /* PaintApp.swift in Sources */,
-				C989E285263217B200220803 /* DrawingPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
