@@ -6,16 +6,18 @@ struct DecagonView: View {
     @State public var drag: CGSize = .zero
     @State public var scale: CGFloat = 1
     @State var rotation: Angle = .zero
-    @State var gradient = Gradient(colors: [.green, .blue])
+    @State var gradient : [Color] = [.green, .blue]
+    
     
     var body: some View {
         
         GeometryReader { geometry in
             PolygonShape(sides: 5)
-                .fill(LinearGradient(gradient: gradient, startPoint: .bottomTrailing, endPoint: .topLeading))
+                .fill(LinearGradient(gradient: Gradient(colors: gradient), startPoint: .bottomTrailing, endPoint: .topLeading))
                 .rotationEffect(.degrees(35))
+
             PolygonShape(sides: 5)
-                .fill(LinearGradient(gradient: gradient, startPoint: .bottomTrailing, endPoint: .topLeading))
+                .fill(LinearGradient(gradient: Gradient(colors: gradient), startPoint: .bottomTrailing, endPoint: .topLeading))
         }
         .padding(.vertical, 10)
         .shadow(radius: 10)
@@ -41,7 +43,7 @@ struct DecagonView: View {
         .simultaneousGesture(
             LongPressGesture()
                 .onEnded { _ in
-                    self.gradient = self.didLongPress == false ? Gradient(colors: [.purple, .blue]) : Gradient(colors: [.green, .blue])
+                    self.gradient = self.didLongPress == false ? [.purple, .blue] : [.green, .blue]
                     self.didLongPress.toggle()
                 }
         )
