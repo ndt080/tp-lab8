@@ -2,17 +2,20 @@ import SwiftUI
 import PencilKit
 
 struct DrawingPad: UIViewRepresentable {
-    @Binding var lineWidth: CGFloat
-    @Binding var selectedColor : Color
+    @Binding var toolPickerIsActive: Bool
     @Binding var canvasView: PKCanvasView
+    private let toolPicker = PKToolPicker()
     
     func makeUIView(context: Context) -> PKCanvasView {
-        canvasView.drawingPolicy = .anyInput
-        canvasView.tool = PKInkingTool(.pen, color: UIColor(selectedColor), width: lineWidth)
+        canvasView.backgroundColor = .white
+        canvasView.isOpaque = true
+        toolPicker.setVisible(toolPickerIsActive, forFirstResponder: canvasView)
+        toolPicker.addObserver(canvasView)
+        canvasView.becomeFirstResponder()
         return canvasView
     }
-    
-    func updateUIView(_ canvasView: PKCanvasView, context: Context) {
-        canvasView.tool = PKInkingTool(.pen, color: UIColor(selectedColor), width: lineWidth)
+
+    func updateUIView(_ uiView: PKCanvasView, context: Context) {
+        toolPicker.setVisible(toolPickerIsActive, forFirstResponder: uiView)
     }
 }

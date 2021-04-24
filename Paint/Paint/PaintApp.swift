@@ -1,10 +1,3 @@
-//
-//  PaintApp.swift
-//  Paint
-//
-//  Created by Andrei Petrov on 22.04.21.
-//
-
 import SwiftUI
 
 @main
