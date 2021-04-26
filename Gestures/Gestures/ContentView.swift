@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var didLongPress: Bool = false
+    @State public var drag: CGSize = .zero
     @State private var scale: CGFloat = 1
     @State var rotation: Angle = .zero
     @State private var changeColor = Color.purple
@@ -15,11 +16,15 @@ struct ContentView: View {
             .frame(width: 210, height: 210, alignment: .center)
             .shadow(radius: 10)
             .animation(.default)
-            .simultaneousGesture(DragGesture()
-                                    .onEnded { value in
-                                        changeColor = value.location.x > 0 ? Color.gray : Color.black
-                                        changeColor = value.location.x < 0 ? Color.gray : Color.black
-                                    }
+            .offset(drag)
+            .simultaneousGesture(
+                DragGesture()
+                    .onChanged { value in
+                        self.drag = value.translation
+                    }
+                    .onEnded({ _ in
+                        self.drag = .zero
+                    })
             )
             .simultaneousGesture(TapGesture()
                                     .onEnded { _ in

@@ -23,6 +23,7 @@ struct TrapezoidView: View {
         .padding(.vertical, 10)
         .shadow(radius: 10)
         .rotationEffect(rotation)
+        .scaleEffect(scale)
         .scaleEffect(animateScale ? 0.5 : 1.0)
         .opacity(animateScale ? 0.2 : 1.0)
         .animation(.easeInOut(duration: 1.0))

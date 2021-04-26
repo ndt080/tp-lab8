@@ -18,9 +18,7 @@ struct ContentView: View {
                         Text("Decagon")
                             .font(.title)
                             .fontWeight(.semibold)
-                        
                         DecagonView()
-
                     }
                     .padding(.vertical, 30)
                     .animation(.default)
